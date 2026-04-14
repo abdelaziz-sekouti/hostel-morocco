@@ -314,7 +314,7 @@ export default function BookingPage() {
               </div>
               <h3 className="title-md text-[var(--color-on-surface)] mb-2">Contact Us</h3>
               <p className="text-[var(--color-on-surface-variant)] body-md">
-                Need help? Call us at +212 524 123 456 or email reservations@elevatednomad.com
+                Need help? Call us at +212 612 236 660 or email sekoutiabdelaziz0@gmail.com
               </p>
             </div>
             <div className="text-center p-6">

@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 interface Room {
   id: string;
@@ -28,13 +28,39 @@ const initialRooms: Room[] = [
 ];
 
 export default function AdminRoomsPage() {
+  const router = useRouter();
   const pathname = usePathname();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [filterStatus, setFilterStatus] = useState("all");
   const [rooms, setRooms] = useState<Room[]>(initialRooms);
   const [showModal, setShowModal] = useState(false);
   const [editingRoom, setEditingRoom] = useState<Room | null>(null);
   const [formData, setFormData] = useState<Partial<Room>>({});
+
+  useEffect(() => {
+    const auth = sessionStorage.getItem("admin_auth");
+    if (!auth) {
+      router.push("/admin/login");
+    } else {
+      setIsAuthenticated(true);
+      setLoading(false);
+    }
+  }, [router]);
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("admin_auth");
+    router.push("/admin/login");
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-[var(--color-surface)] flex items-center justify-center">
+        <div className="text-[var(--color-on-surface-variant)]">Loading...</div>
+      </div>
+    );
+  }
 
   const filteredRooms = filterStatus === "all" 
     ? rooms 
@@ -110,6 +136,12 @@ export default function AdminRoomsPage() {
               <span className="w-2 h-2 rounded-full bg-green-500"></span>
               <span className="text-sm text-[var(--color-on-surface-variant)]">System Operational</span>
             </div>
+            <button 
+              onClick={handleLogout}
+              className="px-3 py-1.5 text-sm font-medium text-[var(--color-on-surface)] bg-[var(--color-surface)] rounded-[var(--radius-lg)] hover:bg-[var(--color-surface-variant)] transition-colors"
+            >
+              Logout
+            </button>
             <div className="w-10 h-10 rounded-full bg-[var(--color-primary)] flex items-center justify-center">
               <span className="text-white font-semibold text-sm">AD</span>
             </div>

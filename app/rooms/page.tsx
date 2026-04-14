@@ -86,16 +86,16 @@ export default function RoomsPage() {
   return (
     <>
       {/* Header */}
-      <section className="relative py-24 bg-[var(--color-surface)]">
+      <section className="relative py-24 bg-(--color-surface)">
         <div className="container-custom">
           <div className="text-center">
-            <span className="text-[var(--color-primary)] font-medium tracking-wider uppercase text-sm">
+            <span className="text-(--color-primary) font-medium tracking-wider uppercase text-sm">
               Accommodations
             </span>
-            <h1 className="text-5xl font-display font-bold text-[var(--color-on-surface)] mt-2 mb-4">
+            <h1 className="text-5xl font-display font-bold text-(--color-on-surface) mt-2 mb-4">
               Our Rooms & Suites
             </h1>
-            <p className="text-[var(--color-on-surface-variant)] max-w-2xl mx-auto text-lg">
+            <p className="text-(--color-on-surface-variant) max-w-2xl mx-auto text-lg">
               From traditional riad rooms to luxurious suites, find your perfect sanctuary in the heart of Marrakech.
             </p>
           </div>
@@ -103,27 +103,27 @@ export default function RoomsPage() {
       </section>
 
       {/* Filters */}
-      <section className="py-8 bg-[var(--color-surface-low)] border-b border-[var(--color-outline-variant)]">
+      <section className="py-8 bg-(--color-surface-low) border-b border-(--color-outline-variant)">
         <div className="container-custom">
           <div className="flex flex-wrap gap-4 items-center justify-between">
             <div className="flex flex-wrap gap-3">
-              <button className="px-5 py-2.5 rounded-[var(--radius-lg)] bg-[var(--color-primary)] text-white font-medium text-sm">
+              <button className="px-5 py-2.5 rounded-(--radius-lg) bg-(--color-primary) text-white font-medium text-sm">
                 All Rooms
               </button>
-              <button className="px-5 py-2.5 rounded-[var(--radius-lg)] bg-[var(--color-surface-lowest)] text-[var(--color-on-surface)] font-medium text-sm hover:bg-[var(--color-surface-variant)] transition-colors">
+              <button className="px-5 py-2.5 rounded-(--radius-lg) bg-(--color-surface-lowest) text-(--color-on-surface) font-medium text-sm hover:bg-(--color-surface-variant) transition-colors">
                 Suites
               </button>
-              <button className="px-5 py-2.5 rounded-[var(--radius-lg)] bg-[var(--color-surface-lowest)] text-[var(--color-on-surface)] font-medium text-sm hover:bg-[var(--color-surface-variant)] transition-colors">
+              <button className="px-5 py-2.5 rounded-(--radius-lg) bg-(--color-surface-lowest) text-(--color-on-surface) font-medium text-sm hover:bg-(--color-surface-variant) transition-colors">
                 Standard
               </button>
-              <button className="px-5 py-2.5 rounded-[var(--radius-lg)] bg-[var(--color-surface-lowest)] text-[var(--color-on-surface)] font-medium text-sm hover:bg-[var(--color-surface-variant)] transition-colors">
+              <button className="px-5 py-2.5 rounded-(--radius-lg) bg-(--color-surface-lowest) text-(--color-on-surface) font-medium text-sm hover:bg-(--color-surface-variant) transition-colors">
                 Dorm
               </button>
             </div>
             
             <div className="flex items-center gap-3">
-              <span className="text-sm text-[var(--color-on-surface-variant)]">Sort by:</span>
-              <select className="bg-[var(--color-surface-lowest)] border-none rounded-[var(--radius-lg)] px-4 py-2.5 text-[var(--color-on-surface)] focus:ring-2 focus:ring-[var(--color-primary)] outline-none cursor-pointer">
+              <span className="text-sm text-(--color-on-surface-variant)">Sort by:</span>
+              <select aria-label="Sort rooms by" className="bg-(--color-surface-lowest) border-none rounded-(--radius-lg) px-4 py-2.5 text-(--color-on-surface) focus:ring-2 focus:ring-(--color-primary) outline-none cursor-pointer">
                 <option>Price: Low to High</option>
                 <option>Price: High to Low</option>
                 <option>Capacity</option>
@@ -135,7 +135,7 @@ export default function RoomsPage() {
       </section>
 
       {/* Room Grid */}
-      <section className="section-padding bg-[var(--color-surface)]">
+      <section className="section-padding bg-(--color-surface)">
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {rooms.map((room) => (
@@ -143,11 +143,12 @@ export default function RoomsPage() {
                 key={room.id} 
                 className="card group overflow-hidden p-0"
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative aspect-4/3 overflow-hidden">
                   <Image
                     src={room.image}
                     alt={room.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute top-4 left-4">
@@ -156,7 +157,7 @@ export default function RoomsPage() {
                     </span>
                   </div>
                   <div className="absolute top-4 right-4">
-                    <span className="glass px-3 py-1.5 rounded-full text-sm font-semibold text-[var(--color-on-surface)]">
+                    <span className="glass px-3 py-1.5 rounded-full text-sm font-semibold text-(--color-on-surface)">
                       {room.type}
                     </span>
                   </div>
@@ -164,16 +165,16 @@ export default function RoomsPage() {
 
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="title-lg text-[var(--color-on-surface)]">{room.name}</h3>
+                    <h3 className="title-lg text-(--color-on-surface)">{room.name}</h3>
                     <div className="text-right">
-                      <span className="text-2xl font-display font-bold text-[var(--color-primary)]">
+                      <span className="text-2xl font-display font-bold text-(--color-primary)">
                         ${room.price}
                       </span>
-                      <span className="text-sm text-[var(--color-on-surface-variant)]">/night</span>
+                      <span className="text-sm text-(--color-on-surface-variant)">/night</span>
                     </div>
                   </div>
 
-                  <p className="text-[var(--color-on-surface-variant)] body-md mb-4 line-clamp-2">
+                  <p className="text-(--color-on-surface-variant) body-md mb-4 line-clamp-2">
                     {room.description}
                   </p>
 
@@ -181,20 +182,20 @@ export default function RoomsPage() {
                     {room.features.slice(0, 4).map((feature, idx) => (
                       <span 
                         key={idx}
-                        className="px-2.5 py-1 bg-[var(--color-surface-low)] rounded-full text-xs text-[var(--color-on-surface-variant)]"
+                        className="px-2.5 py-1 bg-(--color-surface-low) rounded-full text-xs text-(--color-on-surface-variant)"
                       >
                         {feature}
                       </span>
                     ))}
                     {room.features.length > 4 && (
-                      <span className="px-2.5 py-1 bg-[var(--color-surface-low)] rounded-full text-xs text-[var(--color-on-surface-variant)]">
+                      <span className="px-2.5 py-1 bg-(--color-surface-low) rounded-full text-xs text-(--color-on-surface-variant)">
                         +{room.features.length - 4} more
                       </span>
                     )}
                   </div>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-[var(--color-outline-variant)]">
-                    <div className="flex items-center gap-2 text-sm text-[var(--color-on-surface-variant)]">
+                  <div className="flex items-center justify-between pt-4 border-t border-(--color-outline-variant)">
+                    <div className="flex items-center gap-2 text-sm text-(--color-on-surface-variant)">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                         <circle cx="9" cy="7" r="4"></circle>
@@ -218,13 +219,13 @@ export default function RoomsPage() {
       </section>
 
       {/* Amenities Section */}
-      <section className="section-padding bg-[var(--color-surface-low)]">
+      <section className="section-padding bg-(--color-surface-low)">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-display font-bold text-[var(--color-on-surface)] mb-4">
+            <h2 className="text-4xl font-display font-bold text-(--color-on-surface) mb-4">
               Riad Amenities
             </h2>
-            <p className="text-[var(--color-on-surface-variant)] max-w-2xl mx-auto">
+            <p className="text-(--color-on-surface-variant) max-w-2xl mx-auto">
               All guests enjoy access to our shared amenities and services
             </p>
           </div>
@@ -245,7 +246,7 @@ export default function RoomsPage() {
               { icon: "phone", name: "International Calls" }
             ].map((amenity, idx) => (
               <div key={idx} className="flex flex-col items-center gap-3 p-6 text-center">
-                <div className="w-12 h-12 rounded-full bg-[var(--color-primary)]/10 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     {amenity.icon === "wifi" && <><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></>}
                     {amenity.icon === "pool" && <><path d="M2 12h20"></path><path d="M2 20h20"></path><path d="M12 2v5"></path><path d="M12 17v5"></path></>}
@@ -261,7 +262,7 @@ export default function RoomsPage() {
                     {amenity.icon === "phone" && <><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></>}
                   </svg>
                 </div>
-                <span className="text-sm font-medium text-[var(--color-on-surface)]">{amenity.name}</span>
+                <span className="text-sm font-medium text-(--color-on-surface)">{amenity.name}</span>
               </div>
             ))}
           </div>
@@ -269,21 +270,21 @@ export default function RoomsPage() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-[var(--color-surface)]">
+      <section className="section-padding bg-(--color-surface)">
         <div className="container-custom">
-          <div className="bg-[var(--color-surface-low)] rounded-[var(--radius-xl)] p-12 text-center">
-            <h2 className="text-3xl font-display font-bold text-[var(--color-on-surface)] mb-4">
+          <div className="bg-(--color-surface-low) rounded-(--radius-xl) p-12 text-center">
+            <h2 className="text-3xl font-display font-bold text-(--color-on-surface) mb-4">
               Can{"'"}t find what you{"'"}re looking for?
             </h2>
-            <p className="text-[var(--color-on-surface-variant)] mb-8 max-w-xl mx-auto">
+            <p className="text-(--color-on-surface-variant) mb-8 max-w-xl mx-auto">
               Contact our team directly and we{"'"}ll help you find the perfect room for your stay.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/booking" className="btn-primary">
                 Contact Us
               </Link>
-              <a href="tel:+212524123456" className="btn-tertiary">
-                +212 524 123 456
+              <a href="tel:+212612236660" className="btn-tertiary">
+                +212 612 236 660
               </a>
             </div>
           </div>

@@ -47,12 +47,12 @@ export default function Home() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-on-surface)]/80 via-[var(--color-on-surface)]/40 to-transparent"></div>
+          <div className="absolute inset-0 bg-linear-to-r from-(--color-on-surface)/80 via-(--color-on-surface)/40 to-transparent"></div>
         </div>
 
         <div className="container-custom relative z-10">
           <div className="max-w-2xl">
-            <span className="inline-block text-[var(--color-secondary-container)] font-medium tracking-wider uppercase mb-4">
+            <span className="inline-block text-(--color-secondary-container) font-medium tracking-wider uppercase mb-4">
               Welcome to The Elevated Nomad
             </span>
             <h1 className="display-lg text-white mb-6">
@@ -82,40 +82,40 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-[var(--color-surface-lowest)] py-16">
+      <section className="bg-(--color-surface-lowest) py-16">
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-display font-bold text-[var(--color-primary)] mb-2">15+</div>
-              <div className="text-[var(--color-on-surface-variant)]">Luxury Rooms</div>
+              <div className="text-4xl font-display font-bold text-(--color-primary) mb-2">15+</div>
+              <div className="text-(--color-on-surface-variant)">Luxury Rooms</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-display font-bold text-[var(--color-primary)] mb-2">10k+</div>
-              <div className="text-[var(--color-on-surface-variant)]">Happy Guests</div>
+              <div className="text-4xl font-display font-bold text-(--color-primary) mb-2">10k+</div>
+              <div className="text-(--color-on-surface-variant)">Happy Guests</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-display font-bold text-[var(--color-primary)] mb-2">4.9</div>
-              <div className="text-[var(--color-on-surface-variant)]">Guest Rating</div>
+              <div className="text-4xl font-display font-bold text-(--color-primary) mb-2">4.9</div>
+              <div className="text-(--color-on-surface-variant)">Guest Rating</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-display font-bold text-[var(--color-primary)] mb-2">5★</div>
-              <div className="text-[var(--color-on-surface-variant)]">Hotel Rating</div>
+              <div className="text-4xl font-display font-bold text-(--color-primary) mb-2">5★</div>
+              <div className="text-(--color-on-surface-variant)">Hotel Rating</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Experience Carousel */}
-      <section className="section-padding bg-[var(--color-surface)]">
+      <section className="section-padding bg-(--color-surface)">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <span className="text-[var(--color-primary)] font-medium tracking-wider uppercase text-sm">
+            <span className="text-(--color-primary) font-medium tracking-wider uppercase text-sm">
               Experiences
             </span>
-            <h2 className="text-4xl font-display font-bold text-[var(--color-on-surface)] mt-2 mb-4">
+            <h2 className="text-4xl font-display font-bold text-(--color-on-surface) mt-2 mb-4">
               Discover the Magic of Morocco
             </h2>
-            <p className="text-[var(--color-on-surface-variant)] max-w-2xl mx-auto">
+            <p className="text-(--color-on-surface-variant) max-w-2xl mx-auto">
               From rooftop sunsets to traditional hammams, we curate unforgettable experiences that showcase the best of Moroccan culture.
             </p>
           </div>
@@ -124,21 +124,20 @@ export default function Home() {
             {experiences.map((exp, index) => (
               <div 
                 key={exp.id} 
-                className="group relative overflow-hidden rounded-[var(--radius-xl)]"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="group relative overflow-hidden rounded-(--radius-xl)"
               >
-                <div className="aspect-[3/4] relative">
+                <div className="aspect-3/4 relative">
                   <Image
                     src={exp.image}
                     alt={exp.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-on-surface)]/90 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-(--color-on-surface)/90 via-transparent to-transparent"></div>
                 </div>
                 
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="glass rounded-[var(--radius-lg)] p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                  <div className="glass rounded-(--radius-lg) p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform">
                     <h3 className="title-lg text-white mb-2">{exp.title}</h3>
                     <p className="text-white/70 body-md">{exp.description}</p>
                   </div>
@@ -150,51 +149,51 @@ export default function Home() {
       </section>
 
       {/* Rooms Preview */}
-      <section className="section-padding bg-[var(--color-surface-low)]">
+      <section className="section-padding bg-(--color-surface-low)">
         <div className="container-custom">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <div className="lg:w-1/2">
-              <span className="text-[var(--color-primary)] font-medium tracking-wider uppercase text-sm">
+              <span className="text-(--color-primary) font-medium tracking-wider uppercase text-sm">
                 Our Rooms
               </span>
-              <h2 className="text-4xl font-display font-bold text-[var(--color-on-surface)] mt-2 mb-6">
+              <h2 className="text-4xl font-display font-bold text-(--color-on-surface) mt-2 mb-6">
                 Sanctuary of Calm
               </h2>
-              <p className="text-[var(--color-on-surface-variant)] mb-6 leading-relaxed">
+              <p className="text-(--color-on-surface-variant) mb-6 leading-relaxed">
                 Each of our 15+ rooms tells a story of traditional Moroccan craftsmanship combined with modern comfort. From cozy private rooms to spacious suites, find your perfect retreat.
               </p>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[var(--color-primary)]/10 flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                   </div>
-                  <span className="text-[var(--color-on-surface)]">Traditional zellige tilework</span>
+                  <span className="text-(--color-on-surface)">Traditional zellige tilework</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[var(--color-primary)]/10 flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                   </div>
-                  <span className="text-[var(--color-on-surface)]">Hand-carved cedar furniture</span>
+                  <span className="text-(--color-on-surface)">Hand-carved cedar furniture</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[var(--color-primary)]/10 flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                   </div>
-                  <span className="text-[var(--color-on-surface)]">Modern en-suite bathrooms</span>
+                  <span className="text-(--color-on-surface)">Modern en-suite bathrooms</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-[var(--color-primary)]/10 flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                   </div>
-                  <span className="text-[var(--color-on-surface)]">Private rooftop access</span>
+                  <span className="text-(--color-on-surface)">Private rooftop access</span>
                 </li>
               </ul>
               <Link href="/rooms" className="btn-primary inline-block">
@@ -204,7 +203,7 @@ export default function Home() {
 
             <div className="lg:w-1/2 grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="relative aspect-[4/5] rounded-[var(--radius-xl)] overflow-hidden">
+                <div className="relative aspect-4/5 rounded-(--radius-xl) overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=400&h=500&fit=crop"
                     alt="Room interior"
@@ -212,7 +211,7 @@ export default function Home() {
                     className="object-cover"
                   />
                 </div>
-                <div className="relative aspect-square rounded-[var(--radius-xl)] overflow-hidden">
+                <div className="relative aspect-square rounded-(--radius-xl) overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=400&fit=crop"
                     alt="Bathroom"
@@ -222,7 +221,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="space-y-4 pt-8">
-                <div className="relative aspect-square rounded-[var(--radius-xl)] overflow-hidden">
+                <div className="relative aspect-square rounded-(--radius-xl) overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=400&h=400&fit=crop"
                     alt="Bedroom"
@@ -230,7 +229,7 @@ export default function Home() {
                     className="object-cover"
                   />
                 </div>
-                <div className="relative aspect-[4/5] rounded-[var(--radius-xl)] overflow-hidden">
+                <div className="relative aspect-4/5 rounded-(--radius-xl) overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=400&h=500&fit=crop"
                     alt="Terrace"
@@ -245,7 +244,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-[var(--color-primary)] relative overflow-hidden">
+      <section className="section-padding bg-(--color-primary) relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -259,10 +258,10 @@ export default function Home() {
             Book your stay today and discover why The Elevated Nomad is Marrakech{"'"}s most sought-after boutique riad.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/booking" className="bg-white text-[var(--color-primary)] px-8 py-4 rounded-[var(--radius-lg)] font-semibold hover:bg-white/90 transition-colors">
+            <Link href="/booking" className="bg-white text-(--color-primary) px-8 py-4 rounded-(--radius-lg) font-semibold hover:bg-white/90 transition-colors">
               Reserve Now
             </Link>
-            <Link href="/rooms" className="border-2 border-white text-white px-8 py-4 rounded-[var(--radius-lg)] font-semibold hover:bg-white/10 transition-colors">
+            <Link href="/rooms" className="border-2 border-white text-white px-8 py-4 rounded-(--radius-lg) font-semibold hover:bg-white/10 transition-colors">
               View Rooms
             </Link>
           </div>
